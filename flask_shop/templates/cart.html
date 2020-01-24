@@ -1,0 +1,75 @@
+{% extends "layoutCart.html" %}
+{% block content %}
+{% for j in ucitem %}
+<div class="cartItem">
+    <div class="itemImage">
+      {% if j.myid == "P100" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery1.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P101" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery2.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P102" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery3.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P103" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery4.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P104" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery5.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P105" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery6.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P200" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical1.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P201" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical2.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P202" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical3.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P203" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical4.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P204" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical5.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P300" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth1.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P301" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth2.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P302" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth3.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P303" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth4.jpg')}}"></div>
+      {% endif %}
+      {% if j.myid == "P304" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth5.jpg')}}"></div>
+      {% endif %}
+    </div>
+    <div class="itemDetails">
+        <p>{{j.nm}}</p>
+        <p>Qty: {{j.qt}}</p>
+        <p>Item Price: ₹{{j.ip}}</p>
+    </div>
+    <div class="itemWrapper">
+      <form action="" method="POST" class="itemPrice">
+        <input type="hidden" name="ianame" id="ianame" value="{{j.nm}}">
+        <button><i class="fas fa-plus-circle"></i></button>
+    </form>
+    <form action="" method="POST" class="itemPrice">
+      <input type="hidden" name="idname" id="idname" value="{{j.nm}}">
+        <button><i class="fas fa-minus-circle"></i></button>
+    </form>
+    </div>
+
+</div>
+{% endfor %}
+
+
+{% endblock content %}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopaholic</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styleCart.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    {% block javascript %}
+    <script type="text/javascript">
+        {% include "script.js" %}
+    </script>
+    <!-- The contents of myscript.js will be loaded inside the script tag -->
+{% endblock %}
+</head>
+
+<body>
+    <div class="fullpage">
+        <div class="section">
+            <div class="landing">
+                <div class="landingWrapper">
+                    <div class="nav">
+                      <a href="index">SHOPAHOLIC</a>
+                      <div class="pages">
+                        {% if check %}
+                          <a href="login/logout">Log Out</a>
+                        {% else %}
+                          <a href="login">Login</a>
+                        {% endif %}
+                          <a href="aboutUs">About Us</a>
+                          <a href="products">Products</a>
+                          <a href="cart">Shopping Cart</a>
+                          <a href="profile">Profile</a>
+                        </div>
+                    </div>
+                    <div class="landingContent">
+                        <div class="contentTitle">
+                            <h1>Shopping Cart</h1>
+                        </div>
+                        <div class="cartWrapper">
+                          {% block content %}{% endblock %}
+                          {% if ucitem %}
+                            <p id="totalAmount">Total: ₹{{tot}}</p>
+                            <br>
+                            <button type="button" id="paymentButton"><a href="receipt">Proceed to Payment</a></button>
+                            {% else %}
+                            <p id="totalAmount">Total: ₹0 </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="links">
+                <a href="https://www.facebook.com/asterion2019" target="_blank"><i
+                        class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/asterion_2019 " target="_blank"><i
+                        class="fab fa-instagram"></i></i></a>
+            </div>
+            <div class="copyright">
+                <p>
+                    &copy; Shopaholic. <br>All rights reserved.
+                </p>
+            </div>
+            <div class="contactUs">
+                <h1>Contact Us</h1>
+                <p>
+                    shopaholic@gmail.com<br>
+                    +91 99107 58664 / +91 81477 83007
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

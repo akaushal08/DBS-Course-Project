@@ -1,0 +1,72 @@
+{% extends "layoutp.html" %}
+{% block content %}
+<div class="menu-card">
+
+<div class="menu-items1">
+{% for row2 in row %}
+    <div class="item">
+      {% if row2.item_id == "P100" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery1.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P101" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery2.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P102" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery3.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P103" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery4.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P104" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery5.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P105" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/grocery/grocery6.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P200" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical1.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P201" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical2.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P202" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical3.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P203" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical4.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P204" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/electrical/Electrical5.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P300" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth1.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P301" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth2.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P302" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth3.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P303" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth4.jpg')}}"></div>
+      {% endif %}
+      {% if row2.item_id == "P304" %}
+        <div class="item-img"><img src="{{url_for('static',filename='images/products/cloth/cloth5.jpg')}}"></div>
+      {% endif %}
+      <div class="item-details">
+        <div class="item-name">{{row2.item_name}}</div>
+        <div class="item-cost">{{row2.item_price}}</div>
+        <form method="POST" action="" class="buttonForm">
+          <input type="hidden" name="iid" id="iid" value="{{row2.item_id}}">
+          <div class="cartButton"><button>Add To Cart</button></div>
+          <!--div class="cartButton"><button><a href="review">Review</a></button></div-->
+          <div class="cartButton"><button><a href="review">Review</a></button></div>
+        </form>
+
+      </div>
+    </div>
+
+{% endfor %}
+</div>
+</div>
+{% endblock content %}

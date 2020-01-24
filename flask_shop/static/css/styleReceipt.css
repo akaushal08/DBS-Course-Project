@@ -1,0 +1,292 @@
+/* Global */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap');
+@keyframes rotateimg {
+    0% {
+        transform: rotate(0) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes appear1 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes appear2 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes appear3 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear4 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes dance {
+    0% {
+        transform: rotate(0) translateY(0);
+    }
+    50% {
+        transform: rotate(0) translateY(20px);
+    }
+    100% {
+        transform: rotate(0) translateY(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.fullpage {
+    background-image: url("../images/main-bg.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    padding-bottom: 200px;
+    position: relative;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(255, 223, 171);
+}
+
+a {
+    font-size: 20px;
+}
+
+
+/* Landing */
+
+.landing {
+    height: 100vh;
+    width: 100%;
+    min-height: 600px;
+}
+
+.nav {
+    padding-top: 0.5em;
+    width: 100%;
+    background: rgb(255, 114, 78);
+    padding-bottom: 0.5em;
+    padding-right: 8px;
+    animation: appear3 3s 1 0s ease-in-out;
+    filter: drop-shadow(3px 7px 5px rgba(255, 172, 147, 0.507));
+}
+
+.pages {
+    float: right;
+    text-align: right;
+    margin-right: 25px;
+}
+
+#specific {
+    font-weight: 100;
+    font-size: 0.75em;
+}
+
+.nav>a {
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 1.6em;
+    text-transform: uppercase;
+}
+
+.pages>a {
+    line-height: 28px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    vertical-align: middle;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.landingWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.landingContent {
+    height: 90%;
+    width: 100vw;
+    text-align: center;
+    padding: 100px;
+    padding-top: 20px;
+}
+
+.contentTitle {
+    color: rgb(255, 114, 78);
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    animation: appear1 3s 1 0s ease;
+}
+
+.contentTitle:after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 20%;
+    padding-top: 3px;
+    border-bottom: 2px solid rgb(189, 82, 55);
+}
+
+.contentTitle h1 {
+    font-size: 35px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.cartWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    width: 700px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.userDetails {
+    text-align: left;
+    font-size: 18px;
+    color: rgb(189, 82, 55);
+}
+
+.userDetails h1 {
+    font-size: 20px;
+    color: brown;
+}
+
+#name {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#payment {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#paymentButton {
+    padding: 10px;
+    border-radius: 10px;
+    background: rgb(255, 102, 56);
+    color: white;
+    margin: auto;
+}
+
+#paymentButton a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Footer */
+
+.footer {
+    color: white;
+    height: 80px;
+    width: 100%;
+    background: rgb(255, 114, 78, 0.8);
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contactUs {
+    text-align: right;
+    padding-right: 40px;
+    width: 30%;
+}
+
+.contactUs>p {
+    font-weight: 300;
+}
+
+.links {
+    text-align: left;
+    width: 30%;
+    color: white;
+    padding-left: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    width: 30%;
+}
+
+.fab {
+    color: white;
+    text-decoration: none;
+}
+
+i {
+    font-size: 25px;
+    padding-right: 15px;
+}
+
+.contactUs h1 {
+    text-align: right;
+    font-size: 20px;
+}
